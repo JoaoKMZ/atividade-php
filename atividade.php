@@ -5,30 +5,27 @@ $usuario = [
     "hobbies" => ["Futebol", "Leitura", "Música"]
 ];
 
-function verificarIdade($idade) {
-    if ($idade < 18) {
-        return "Menor de idade\n";
-    } else {
-        return "Maior de idade\n";
-    }
+function exibirMensagem($nome, $idade) {
+    return "Olá, $nome! Você tem $idade anos.\n";
 }
 
-echo verificarIdade($usuario["idade"]);
-
-
 function listarHobbies($hobbies) {
-    echo "Hobbies:\n";
+    echo "Seus hobbies são:\n";
     foreach ($hobbies as $hobby) {
         echo "- $hobby\n";
     }
 }
 
-listarHobbies($usuario["hobbies"]);
-
-function exibirMensagem($nome, $idade) {
-    return "Olá, $nome! Você tem $idade anos.\n";
+function verificarIdade($idade) {
+    if ($idade < 18) {
+        return "Você é menor de idade.\n";
+    } else {
+        return "Você é maior de idade.\n";
+    }
 }
 
 echo exibirMensagem($usuario["nome"], $usuario["idade"]);
+listarHobbies($usuario["hobbies"]);
+echo verificarIdade($usuario["idade"]);
 
 ?>
